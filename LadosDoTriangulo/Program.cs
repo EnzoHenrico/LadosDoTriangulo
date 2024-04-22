@@ -38,7 +38,7 @@ do
 }
 while (side3 <= 0);
 
-if (side1 + side2 < side3)
+if ((side1 + side2 < side3) || (side1 + side3 < side2) || (side2 + side3 < side1))
 {
     Console.WriteLine("\nA soma da medidas de dois lados é menor do que o terceiro, portanto o triângulo é inválido.");
 }
@@ -46,17 +46,14 @@ else if (side1 == side2 && side2 == side3)
 {
     Console.WriteLine("\nO triângulo é Equilátero.");
 }
-else if (
-    (side1 == side2 && side1 != side3) ||
-    (side2 == side3 && side2 != side1) ||
-    (side3 == side1 && side3 != side2))
+else if (side1 != side2 && side2 != side3)
 {
-    Console.WriteLine("\nO triângulo é Isóceles.");
+    Console.WriteLine("\nO triângulo é Escaleno.");
 }
 else
 {
-    // Três lados diferentes
-    Console.WriteLine("\nO triângulo é Escaleno.");
+    // Dois lados iguais e um diferente
+    Console.WriteLine("\nO triângulo é Isóceles.");
 }
 
 // Interação final
